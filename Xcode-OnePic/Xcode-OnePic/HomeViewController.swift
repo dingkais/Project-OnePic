@@ -7,16 +7,39 @@
 //
 
 import UIKit
+import AFNetworking
+import PBJVision
 
-class HomeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class HomeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, PBJVisionDelegate {
    
-    @IBOutlet var cameraImageView: UIView!
+    @IBOutlet var cameraImageView: UIImageView!
     
     var imagePicker: UIImagePickerController!
+    
+    let vision = PBJVision.sharedInstance()
+    
+    var capturedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let previewLayer = PBJVision.sharedInstance().previewLayer
+        previewLayer.frame = cameraImageView.bounds;
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        cameraImageView.layer.addSublayer(previewLayer)
+        
+        
+        vision.cameraDevice = PBJCameraDevice.Back;
+        vision.cameraMode = PBJCameraMode.Photo;
+        vision.cameraOrientation = PBJCameraOrientation.Portrait;
+        vision.focusMode = PBJFocusMode.ContinuousAutoFocus;
+        vision.outputFormat = PBJOutputFormat.Square;
+        vision.videoRenderingEnabled = true
+        vision.additionalCompressionProperties = [AVVideoProfileLevelKey : AVVideoProfileLevelH264Baseline30];
+        vision.startPreview()
+        vision.captureSessionActive
+        
+        vision.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -30,37 +53,26 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
     @IBAction func takePhoto(sender: UIButton) {
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .Camera
-
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-            
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        }
-        else {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        }
-        self.presentViewController(imagePicker, animated:true, completion:nil)
-        
+        vision.capturePhoto()
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
-        var temp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        cameraImageView.image = temp
-        self.dismissViewControllerAnimated(true, completion: {})
+    func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
+        
+        capturedImage = photoDict![PBJVisionPhotoImageKey] as! UIImage
+        //        UIImageWriteToSavedPhotosAlbum(capturedImage, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        self.performSegueWithIdentifier("captureSegue", sender: nil)
     }
-
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let postImageViewController = segue.destinationViewController as! PostImageViewController
+        
+        postImageViewController.capturedImage = capturedImage
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

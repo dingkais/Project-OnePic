@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D36E4EBC2FA108EC80433A876A18C2B2CDD5FB34",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D36E4EBC2FA108EC80433A876A18C2B2CDD5FB34" : 0,
+    "1BBBE2E1CCB7D6A4F6599B09CC079D33D4EA59C5" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "838426C3-53A6-4655-ADE7-7DE3DB87A052",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D36E4EBC2FA108EC80433A876A18C2B2CDD5FB34" : "Project-OnePic\/",
+    "1BBBE2E1CCB7D6A4F6599B09CC079D33D4EA59C5" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Xcode-OnePic",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Xcode-OnePic\/Xcode-OnePic.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dingkais\/OnePic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1BBBE2E1CCB7D6A4F6599B09CC079D33D4EA59C5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dingkais\/Project-OnePic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D36E4EBC2FA108EC80433A876A18C2B2CDD5FB34"
+    }
+  ]
+}

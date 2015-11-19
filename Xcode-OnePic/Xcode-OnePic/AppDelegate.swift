@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        application.statusBarHidden = true
+        
+    Parse.setApplicationId("ltntlpZGj3JBaisj8bvFKuOEtA8Nuxp5NE8oTvDP", clientKey: "Ns9BMzi7k4THDSrhoeRW28pdvMi8I77RSefONuxB")
         return true
     }
 
