@@ -32,15 +32,26 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     @IBAction func takePhoto(sender: UIButton) {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
+        imagePicker.allowsEditing = false
         imagePicker.sourceType = .Camera
+
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        }
+        else {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
+        self.presentViewController(imagePicker, animated:true, completion:nil)
         
-        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-//        imagePicker.dismissViewControllerAnimated(true, completion: nil)
-//        cameraImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-//    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
+        var temp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        cameraImageView.image = temp
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+
 
     /*
     // MARK: - Navigation
