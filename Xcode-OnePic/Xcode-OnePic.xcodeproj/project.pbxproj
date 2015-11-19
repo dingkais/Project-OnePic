@@ -14,6 +14,7 @@
 		B00D36FD1BFDB2DB000691CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00D36FB1BFDB2DB000691CB /* LaunchScreen.storyboard */; };
 		B00D37081BFDB2DB000691CB /* Xcode_OnePicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D37071BFDB2DB000691CB /* Xcode_OnePicTests.swift */; };
 		B00D37131BFDB2DB000691CB /* Xcode_OnePicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D37121BFDB2DB000691CB /* Xcode_OnePicUITests.swift */; };
+		B00D37211BFDBBA6000691CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D37201BFDBBA6000691CB /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B00D370E1BFDB2DB000691CB /* Xcode-OnePicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Xcode-OnePicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00D37121BFDB2DB000691CB /* Xcode_OnePicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode_OnePicUITests.swift; sourceTree = "<group>"; };
 		B00D37141BFDB2DB000691CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00D37201BFDBBA6000691CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		B00D36F11BFDB2DB000691CB /* Xcode-OnePic */ = {
 			isa = PBXGroup;
 			children = (
+				B00D37221BFDBBDC000691CB /* View Controllers */,
 				B00D36F21BFDB2DB000691CB /* AppDelegate.swift */,
 				B00D36F41BFDB2DB000691CB /* ViewController.swift */,
 				B00D36F61BFDB2DB000691CB /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				B00D37141BFDB2DB000691CB /* Info.plist */,
 			);
 			path = "Xcode-OnePicUITests";
+			sourceTree = "<group>";
+		};
+		B00D37221BFDBBDC000691CB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B00D37201BFDBBA6000691CB /* HomeViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				B00D36F51BFDB2DB000691CB /* ViewController.swift in Sources */,
 				B00D36F31BFDB2DB000691CB /* AppDelegate.swift in Sources */,
+				B00D37211BFDBBA6000691CB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
