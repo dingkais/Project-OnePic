@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8av-uS-VmN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -52,10 +52,6 @@
                                         <rect key="frame" x="20" y="20" width="21" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icn-flash-off" id="OTi-V9-kCD">
-                                        <rect key="frame" x="338" y="20" width="16" height="22"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ygv-Y6-waN">
                                         <rect key="frame" x="161" y="190" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,6 +92,21 @@
                                             <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="973-Xd-6Sl"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NUN-8i-Vz9" userLabel="switchCamera">
+                                        <rect key="frame" x="8" y="9" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="switchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFE-lH-v3Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NKj-nu-ePk" userLabel="flash">
+                                        <rect key="frame" x="326" y="10" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icn-flash-off"/>
+                                        <connections>
+                                            <action selector="flash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0m-dC-isp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -106,15 +117,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fIb-9T-dWx"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="buttonFlash" destination="NKj-nu-ePk" id="5wZ-io-y96"/>
                         <outlet property="cameraImageView" destination="Kcs-KA-IAk" id="tki-L5-kNC"/>
-                        <segue destination="6lf-44-feF" kind="modal" identifier="captureSegue" id="S74-je-3eW"/>
+                        <segue destination="6lf-44-feF" kind="push" identifier="captureSegue" id="ket-Yg-QH9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299.5" y="451.5"/>
+            <point key="canvasLocation" x="831.5" y="451.5"/>
         </scene>
         <!--Post Image View Controller-->
         <scene sceneID="h50-ZT-9Fz">
@@ -135,6 +148,9 @@
                                         <state key="normal" title="RETAKE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buttonRetake:" destination="6lf-44-feF" eventType="touchUpInside" id="eI7-hu-KWa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -169,7 +185,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a caption..." textAlignment="natural" id="sCT-Th-LRi">
                                         <rect key="frame" x="14" y="383" width="338" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
@@ -179,6 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TJv-Hl-ZGz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="characterCount" destination="sH0-8C-uEx" id="wZ6-Hw-E9s"/>
@@ -190,12 +207,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REg-9w-gMV" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767.5" y="451.5"/>
+            <point key="canvasLocation" x="1299.5" y="451.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CKQ-Aw-Unv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8av-uS-VmN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3WU-XR-zb4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TGM-aa-2R3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFH-I3-IE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299" y="451"/>
         </scene>
     </scenes>
     <resources>
         <image name="btn-camera" width="90" height="90"/>
-        <image name="icn-flash-off" width="16" height="22"/>
+        <image name="icn-flash-off" width="44" height="44"/>
         <image name="icn-library" width="20" height="20"/>
         <image name="icn-receive" width="20" height="20"/>
         <image name="icn-rotate-camera" width="21" height="21"/>

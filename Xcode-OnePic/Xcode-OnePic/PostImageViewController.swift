@@ -108,6 +108,10 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         return true
     }
 
+    @IBAction func buttonRetake(sender: UIButton) {
+        navigationController!.popViewControllerAnimated(true)
+        
+    }
     /*
     // MARK: - Navigation
 
