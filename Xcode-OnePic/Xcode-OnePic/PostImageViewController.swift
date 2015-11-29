@@ -122,7 +122,7 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         return true
     }
 
-    func addVideoPlayer (){
+    func addVideoPlayer() {
         player = Player()
         
         if let localPlayer = player {
@@ -142,6 +142,14 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
             
         }
         
+    }
+    
+    func removeVideoPlayer() {
+        if let localPlayer = player {
+            localPlayer.view.removeFromSuperview()
+            localPlayer.removeFromParentViewController()
+            player = nil
+        }
     }
     
     //Player delegate functions
@@ -166,6 +174,8 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
     
     @IBAction func buttonRetake(sender: UIButton) {
         navigationController!.popViewControllerAnimated(true)
+        imageView.image = nil
+        removeVideoPlayer()
         
     }
     /*

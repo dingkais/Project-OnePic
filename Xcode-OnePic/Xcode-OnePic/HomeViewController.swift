@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var capturedImage: UIImage!
     var capturedVideoPath: String!
+    var isVideo = false
     
     var myTimer: NSTimer?
     
@@ -122,6 +123,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
         
         capturedImage = photoDict![PBJVisionPhotoImageKey] as! UIImage
+        isVideo = false
         //        UIImageWriteToSavedPhotosAlbum(capturedImage, self, "image:didFinishSavingWithError:contextInfo:", nil)
         self.performSegueWithIdentifier("captureSegue", sender: nil)
     }
@@ -129,7 +131,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     func vision(vision: PBJVision, capturedVideo videoDict: [NSObject : AnyObject]?, error: NSError?) {
         
         capturedVideoPath = videoDict![PBJVisionVideoPathKey] as! String
-        
+        isVideo = true
         self.performSegueWithIdentifier("captureSegue", sender: nil)
         
         
@@ -187,8 +189,14 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         let postImageViewController = segue.destinationViewController as! PostImageViewController
         
-        postImageViewController.capturedImage2 = capturedImage
-        postImageViewController.capturedVideoPath2 = capturedVideoPath
+        if isVideo {
+            postImageViewController.capturedImage2 = nil
+            postImageViewController.capturedVideoPath2 = capturedVideoPath
+        }else{
+            postImageViewController.capturedImage2 = capturedImage
+            postImageViewController.capturedVideoPath2 = nil
+        }
+        
         videoTimer.text = String("00:00")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
