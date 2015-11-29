@@ -24,16 +24,19 @@ PODS:
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - PBJVision (0.4.2)
+  - Player (0.0.8)
 
 DEPENDENCIES:
   - AFNetworking
   - Parse
   - PBJVision
+  - Player
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
+  Player: 31becc185d219b96dac5419ce90745095940ab92
 
 COCOAPODS: 0.39.0

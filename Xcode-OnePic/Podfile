@@ -6,5 +6,6 @@ use_frameworks!
 pod 'AFNetworking'
 pod 'Parse'
 pod 'PBJVision'
+pod 'Player'
 
 

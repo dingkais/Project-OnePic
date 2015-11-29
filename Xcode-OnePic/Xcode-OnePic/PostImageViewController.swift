@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Player
 
-
-class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate {
+class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, PlayerDelegate {
     
     let offset: CGFloat = -50
 
-    var capturedImage: UIImage!
+    var capturedImage2: UIImage?
+    var capturedVideoPath2: String?
+    var player: Player?
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
@@ -32,15 +34,27 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         
         textView.delegate = self
         textView.alpha = 0.5
-
-        imageView.image = capturedImage
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         textView.becomeFirstResponder()
+        
+        if let image = capturedImage2{
+            imageView.image = image
+        } else {
+            addVideoPlayer()
+        }
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -108,6 +122,48 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         return true
     }
 
+    func addVideoPlayer (){
+        player = Player()
+        
+        if let localPlayer = player {
+            localPlayer.delegate = self
+            localPlayer.view.frame = self.imageView.frame
+            
+            addChildViewController(localPlayer)
+            scrollView.addSubview(localPlayer.view)
+            localPlayer.didMoveToParentViewController(self)
+            
+            if let path = capturedVideoPath2 {
+                let videoUrl = NSURL(fileURLWithPath: path)
+                player?.setUrl(videoUrl)
+                player?.playFromBeginning()
+            }
+            
+            
+        }
+        
+    }
+    
+    //Player delegate functions
+    func playerReady(player: Player) {
+        
+    }
+    func playerPlaybackStateDidChange(player: Player) {
+        
+    }
+    func playerBufferingStateDidChange(player: Player) {
+        
+    }
+    
+    func playerPlaybackWillStartFromBeginning(player: Player) {
+        
+    }
+    func playerPlaybackDidEnd(player: Player) {
+        player.playFromBeginning()
+    }
+
+    
+    
     @IBAction func buttonRetake(sender: UIButton) {
         navigationController!.popViewControllerAnimated(true)
         

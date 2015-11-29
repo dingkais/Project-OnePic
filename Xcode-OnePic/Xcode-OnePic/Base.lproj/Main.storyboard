@@ -52,24 +52,19 @@
                                         <rect key="frame" x="20" y="20" width="21" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ygv-Y6-waN">
-                                        <rect key="frame" x="161" y="190" width="52" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="PHOTO">
-                                            <color key="titleColor" red="0.47843137254901963" green="0.72941176470588232" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b6w-RU-FYj">
                                         <rect key="frame" x="292" y="190" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VIDEO">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="switchToVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VUy-QH-eTl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLz-Jh-60w">
-                                        <rect key="frame" x="36" y="190" width="57" height="30"/>
+                                        <rect key="frame" x="33" y="190" width="57" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="LIBRARY">
@@ -78,18 +73,8 @@
                                         <state key="selected">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                    </button>
-                                    <view contentMode="scaleToFill" id="pRX-LU-kUQ" userLabel="highlight">
-                                        <rect key="frame" x="125" y="226" width="125" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.47843137254901963" green="0.72941176470588232" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C5E-cs-bYx" userLabel="takePhoto">
-                                        <rect key="frame" x="142" y="60" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="btn-camera"/>
                                         <connections>
-                                            <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="973-Xd-6Sl"/>
+                                            <action selector="switchToLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdp-1H-0sj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NUN-8i-Vz9" userLabel="switchCamera">
@@ -107,6 +92,40 @@
                                             <action selector="flash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0m-dC-isp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cft-we-8qY" userLabel="takeVideo">
+                                        <rect key="frame" x="142" y="60" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="btn-video"/>
+                                        <connections>
+                                            <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2hU-GT-qZI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C5E-cs-bYx" userLabel="takePhoto">
+                                        <rect key="frame" x="142" y="60" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="btn-camera"/>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="973-Xd-6Sl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ygv-Y6-waN">
+                                        <rect key="frame" x="161" y="190" width="52" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="PHOTO">
+                                            <color key="titleColor" red="0.47843137250000001" green="0.72941176470000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="switchToPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGR-Sb-CoV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Mn-WP-4XM">
+                                        <rect key="frame" x="117" y="20" width="141" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -121,7 +140,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="buttonFlash" destination="NKj-nu-ePk" id="5wZ-io-y96"/>
+                        <outlet property="buttonLibrary" destination="fLz-Jh-60w" id="BxE-dO-Sv3"/>
+                        <outlet property="buttonPhoto" destination="Ygv-Y6-waN" id="gvN-80-DS3"/>
+                        <outlet property="buttonTakePhoto" destination="C5E-cs-bYx" id="bgy-0r-UVs"/>
+                        <outlet property="buttonTakeVideo" destination="cft-we-8qY" id="p8D-1s-oun"/>
+                        <outlet property="buttonVideo" destination="b6w-RU-FYj" id="RdD-XE-3FC"/>
                         <outlet property="cameraImageView" destination="Kcs-KA-IAk" id="tki-L5-kNC"/>
+                        <outlet property="videoTimer" destination="2Mn-WP-4XM" id="Mzd-lo-wrR"/>
                         <segue destination="6lf-44-feF" kind="push" identifier="captureSegue" id="ket-Yg-QH9"/>
                     </connections>
                 </viewController>
@@ -159,11 +184,6 @@
                                 <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YQS-d4-MeN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" id="lBV-3l-GKd">
                                         <rect key="frame" x="17" y="416" width="338" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -188,8 +208,13 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="send"/>
                                     </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YQS-d4-MeN">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -231,6 +256,7 @@
     </scenes>
     <resources>
         <image name="btn-camera" width="90" height="90"/>
+        <image name="btn-video" width="90" height="90"/>
         <image name="icn-flash-off" width="44" height="44"/>
         <image name="icn-library" width="20" height="20"/>
         <image name="icn-receive" width="20" height="20"/>
