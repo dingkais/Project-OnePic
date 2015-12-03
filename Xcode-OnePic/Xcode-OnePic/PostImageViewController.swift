@@ -8,6 +8,7 @@
 
 import UIKit
 import Player
+import Parse
 
 class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, PlayerDelegate {
     
@@ -86,6 +87,32 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         scrollView.contentOffset.y = 0
         // Disable scrolling when keyboard is hidden
         scrollView.scrollEnabled = false
+        
+        // Send photo to Parse
+        var Message = PFObject(className:"Message")
+        
+        if capturedImage2 == nil {
+            
+            var videoData = NSData(contentsOfFile: "capturedVideoPath2")
+//          let videoData = NSData.dataWithContentsOfFile("capturedVideoPath2")
+            let videoFile = PFFile(name:"video.mov", data:videoData!)
+                        Message["videoFile"] = videoFile
+
+        } else {
+            let imageData =
+            UIImageJPEGRepresentation(capturedImage2!, 0)
+            let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+            Message["imageFile"] = imageFile
+        }
+        
+        Message["text"] = textView.text
+        Message.saveInBackground()
+        
+        //return to camera
+        navigationController!.popViewControllerAnimated(true)
+        imageView.image = nil
+        removeVideoPlayer()
+
     }
     
     func textViewDidBeginEditing(textView: UITextView) {

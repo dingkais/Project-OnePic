@@ -17,6 +17,8 @@
 		B00D37131BFDB2DB000691CB /* Xcode_OnePicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D37121BFDB2DB000691CB /* Xcode_OnePicUITests.swift */; };
 		B00D37211BFDBBA6000691CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D37201BFDBBA6000691CB /* HomeViewController.swift */; };
 		B017ADE41BFE88EA0021D196 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B017ADE31BFE88EA0021D196 /* PostImageViewController.swift */; };
+		B0F414FE1C10E7A3008E4031 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */; };
+		B0F415001C10FA04008E4031 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F414FF1C10FA04008E4031 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		B00D37141BFDB2DB000691CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B00D37201BFDBBA6000691CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B017ADE31BFE88EA0021D196 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		B0F414FF1C10FA04008E4031 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E44B258AF293534A3AA6573D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 				B00D36F21BFDB2DB000691CB /* AppDelegate.swift */,
 				B00D36F41BFDB2DB000691CB /* ViewController.swift */,
 				B00D36F61BFDB2DB000691CB /* Main.storyboard */,
+				B0F414FF1C10FA04008E4031 /* PhotoCell.swift */,
+				B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */,
 				B00D36F91BFDB2DB000691CB /* Assets.xcassets */,
 				B00D36FB1BFDB2DB000691CB /* LaunchScreen.storyboard */,
 				B00D36FE1BFDB2DB000691CB /* Info.plist */,
@@ -349,8 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B017ADE41BFE88EA0021D196 /* PostImageViewController.swift in Sources */,
+				B0F414FE1C10E7A3008E4031 /* LibraryViewController.swift in Sources */,
 				B00D36F51BFDB2DB000691CB /* ViewController.swift in Sources */,
 				B00D36F31BFDB2DB000691CB /* AppDelegate.swift in Sources */,
+				B0F415001C10FA04008E4031 /* PhotoCell.swift in Sources */,
 				B00D37211BFDBBA6000691CB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
