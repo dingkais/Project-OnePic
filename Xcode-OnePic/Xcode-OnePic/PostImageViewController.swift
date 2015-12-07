@@ -130,6 +130,7 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
             }
             
             Message["text"] = textView.text
+            Message["Key"] = "key2015"
             Message.saveInBackground()
             
             //return to camera

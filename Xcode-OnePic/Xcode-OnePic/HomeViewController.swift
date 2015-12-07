@@ -122,7 +122,32 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
         
-        capturedImage = photoDict![PBJVisionPhotoImageKey] as! UIImage
+        let originalImage = photoDict![PBJVisionPhotoImageKey] as! UIImage
+        
+        
+        // Crop image
+        let imageSize = originalImage.size
+        var x: CGFloat = 0
+        var y = 64 * imageSize.height / 667
+        var w = imageSize.width
+        var h = imageSize.width
+//        if imageSize.width > imageSize.height {
+//            x = 0
+//            y = 64 * imageSize.width / 667
+//            w = imageSize.height
+//            h = imageSize.height
+//        }
+        
+        
+        
+        
+        
+        let cropRect = CGRectMake(x, y, w, h)
+        let imageRef = CGImageCreateWithImageInRect(originalImage.CGImage, cropRect)
+        let croppedImage: UIImage = UIImage(CGImage: imageRef!, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+
+        capturedImage = croppedImage
+        
         isVideo = false
         //        UIImageWriteToSavedPhotosAlbum(capturedImage, self, "image:didFinishSavingWithError:contextInfo:", nil)
         self.performSegueWithIdentifier("captureSegue", sender: nil)

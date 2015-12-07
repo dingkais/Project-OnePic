@@ -7,5 +7,6 @@ pod 'AFNetworking'
 pod 'Parse'
 pod 'PBJVision'
 pod 'Player'
+pod 'SDWebImage', '~>3.7'
 
 

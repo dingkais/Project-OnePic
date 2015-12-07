@@ -21,22 +21,27 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.5.0)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
   - PBJVision (0.4.2)
   - Player (0.0.8)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
   - AFNetworking
   - Parse
   - PBJVision
   - Player
+  - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
   Player: 31becc185d219b96dac5419ce90745095940ab92
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
 COCOAPODS: 0.39.0

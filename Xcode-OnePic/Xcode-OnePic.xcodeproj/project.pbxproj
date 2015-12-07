@@ -56,6 +56,7 @@
 		B00D37141BFDB2DB000691CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B00D37201BFDBBA6000691CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B017ADE31BFE88EA0021D196 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		B0B3311A1C156BE4002F72EB /* Xcode-OnePic-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Xcode-OnePic-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		B0F414FF1C10FA04008E4031 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		E44B258AF293534A3AA6573D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 				B00D36F61BFDB2DB000691CB /* Main.storyboard */,
 				B0F414FF1C10FA04008E4031 /* PhotoCell.swift */,
 				B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */,
+				B0B3311A1C156BE4002F72EB /* Xcode-OnePic-Bridging-Header.h */,
 				B00D36F91BFDB2DB000691CB /* Assets.xcassets */,
 				B00D36FB1BFDB2DB000691CB /* LaunchScreen.storyboard */,
 				B00D36FE1BFDB2DB000691CB /* Info.plist */,

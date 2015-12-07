@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/PBJVision.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/Player.framework"
+  install_framework "Pods/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/PBJVision.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/Player.framework"
+  install_framework "Pods/SDWebImage.framework"
 fi
