@@ -13,6 +13,7 @@ class LibraryViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet var collectionView: UICollectionView!
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,32 @@ class LibraryViewController: UIViewController, UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath)as! PhotoCell
-        cell.setPhotoImage(<#T##photoImage: UIImage##UIImage#>)
-        
-//        cell.backgroundColor = UIColor.redColor()
-        
-        return cell
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        // Set the number of items in your collection view.
+        return 16
+    }
+    
+    
+
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
+         // Access
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath)as! PhotoCell
+        var Message = PFObject(className:"Message")
+
+        var photo = Message["imageFile"]
+        
+        // Do any custom modifications you your cell, referencing the outlets you defined in the Custom cell file.
+        
+//        cell.setPhotoImage(UIImage) = photo
+        
+        cell.backgroundColor = UIColor.redColor()
+        
+        return cell
     }
     
     /*

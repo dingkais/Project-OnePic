@@ -88,7 +88,7 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         // Disable scrolling when keyboard is hidden
         scrollView.scrollEnabled = false
         
-        // Send photo to Parse
+        // Send photo and video to Parse
         var Message = PFObject(className:"Message")
         
         if capturedImage2 == nil {
