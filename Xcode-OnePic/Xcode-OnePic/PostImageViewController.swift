@@ -1,4 +1,4 @@
-//
+ //
 //  PostImageViewController.swift
 //  Xcode-OnePic
 //
@@ -87,31 +87,6 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
         scrollView.contentOffset.y = 0
         // Disable scrolling when keyboard is hidden
         scrollView.scrollEnabled = false
-        
-        // Send photo and video to Parse
-        var Message = PFObject(className:"Message")
-        
-        if capturedImage2 == nil {
-            
-            var videoData = NSData(contentsOfFile: "capturedVideoPath2")
-//          let videoData = NSData.dataWithContentsOfFile("capturedVideoPath2")
-            let videoFile = PFFile(name:"video.mov", data:videoData!)
-                        Message["videoFile"] = videoFile
-
-        } else {
-            let imageData =
-            UIImageJPEGRepresentation(capturedImage2!, 0)
-            let imageFile = PFFile(name:"image.jpeg", data:imageData!)
-            Message["imageFile"] = imageFile
-        }
-        
-        Message["text"] = textView.text
-        Message.saveInBackground()
-        
-        //return to camera
-        navigationController!.popViewControllerAnimated(true)
-        imageView.image = nil
-        removeVideoPlayer()
 
     }
     
@@ -131,7 +106,39 @@ class PostImageViewController: UIViewController, UIScrollViewDelegate, UITextVie
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
+            //"Send" button clicked
+            
+            
+            
             textView.resignFirstResponder()
+            
+            // Here implement send function
+            // Send photo and video to Parse
+            var Message = PFObject(className:"Message")
+            
+            if let videoPath = capturedVideoPath2, videoData = NSData(contentsOfFile: videoPath)  {
+                //          let videoData = NSData.dataWithContentsOfFile("capturedVideoPath2")
+                
+                let videoFile = PFFile(name:"video.mov", data:videoData)
+                Message["videoFile"] = videoFile
+                
+            } else {
+                let imageData =
+                UIImageJPEGRepresentation(capturedImage2!, 0)
+                let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+                Message["imageFile"] = imageFile
+            }
+            
+            Message["text"] = textView.text
+            Message.saveInBackground()
+            
+            //return to camera
+            navigationController!.popViewControllerAnimated(true)
+            imageView.image = nil
+            removeVideoPlayer()
+
+            
+
             return false;
         }
         if textView.text.characters.count > 140 {
