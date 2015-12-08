@@ -111,7 +111,7 @@ class LibraryViewController: UIViewController, UICollectionViewDataSource, UICol
         // Do any custom modifications you your cell, referencing the outlets you defined in the Custom cell file.
         
         
-        cell.backgroundColor = UIColor.blackColor()
+        cell.backgroundColor = UIColor.redColor()
         
         return cell
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A04049E95A0927EF45ACFE0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799BBAD8F3A36B17EC6AAA9F /* Pods.framework */; };
+		56FC73031C16A767002A5EC3 /* ReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC73021C16A767002A5EC3 /* ReceivedViewController.swift */; };
+		56FC73051C16B690002A5EC3 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC73041C16B690002A5EC3 /* CommentCell.swift */; };
 		B00D36F31BFDB2DB000691CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D36F21BFDB2DB000691CB /* AppDelegate.swift */; };
 		B00D36F51BFDB2DB000691CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00D36F41BFDB2DB000691CB /* ViewController.swift */; };
 		B00D36F81BFDB2DB000691CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00D36F61BFDB2DB000691CB /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		4253DEC0CA78C1B7EE7A3DD3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		56FC73021C16A767002A5EC3 /* ReceivedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedViewController.swift; sourceTree = "<group>"; };
+		56FC73041C16B690002A5EC3 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		799BBAD8F3A36B17EC6AAA9F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00D36EF1BFDB2DB000691CB /* Xcode-OnePic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode-OnePic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00D36F21BFDB2DB000691CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				B00D36F21BFDB2DB000691CB /* AppDelegate.swift */,
 				B00D36F41BFDB2DB000691CB /* ViewController.swift */,
 				B00D36F61BFDB2DB000691CB /* Main.storyboard */,
+				56FC73041C16B690002A5EC3 /* CommentCell.swift */,
 				B0F414FF1C10FA04008E4031 /* PhotoCell.swift */,
 				B0F414FD1C10E7A3008E4031 /* LibraryViewController.swift */,
 				B0B3311A1C156BE4002F72EB /* Xcode-OnePic-Bridging-Header.h */,
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B00D37201BFDBBA6000691CB /* HomeViewController.swift */,
+				56FC73021C16A767002A5EC3 /* ReceivedViewController.swift */,
 				B017ADE31BFE88EA0021D196 /* PostImageViewController.swift */,
 			);
 			name = "View Controllers";
@@ -358,10 +364,12 @@
 			files = (
 				B017ADE41BFE88EA0021D196 /* PostImageViewController.swift in Sources */,
 				B0F414FE1C10E7A3008E4031 /* LibraryViewController.swift in Sources */,
+				56FC73031C16A767002A5EC3 /* ReceivedViewController.swift in Sources */,
 				B00D36F51BFDB2DB000691CB /* ViewController.swift in Sources */,
 				B00D36F31BFDB2DB000691CB /* AppDelegate.swift in Sources */,
 				B0F415001C10FA04008E4031 /* PhotoCell.swift in Sources */,
 				B00D37211BFDBBA6000691CB /* HomeViewController.swift in Sources */,
+				56FC73051C16B690002A5EC3 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
